@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <filter>
+        <filter-name>LoginFilter</filter-name>
+        <filter-class>com.ims.filters.LoginFilter</filter-class>
+    </filter>
+     <!--//we filter all the url with Admin--> 
+    <filter-mapping>
+        <filter-name>LoginFilter</filter-name> 
+        <url-pattern>/Admin/*</url-pattern>
+    </filter-mapping>
+     <!-- in servlet we are able to retrieve or send data from view and also like with our other dao . Every controller name should be initiated like this-->
+    <servlet> 
+        
+        <servlet-name>AdminController</servlet-name>  
+        <servlet-class>com.ims.controller.AdminController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>coursecontroller</servlet-name>
+        <servlet-class>com.ims.controller.coursecontroller</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>StudentController</servlet-name>
+        <servlet-class>com.ims.controller.StudentController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RelationController</servlet-name>
+        <servlet-class>com.ims.controller.RelationController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UserController</servlet-name>
+        <servlet-class>com.ims.controller.UserController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>HomeController</servlet-name>
+        <servlet-class>com.ims.controller.HomeController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MailController</servlet-name>
+        <servlet-class>com.ims.controller.MailController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BlogController</servlet-name>
+        <servlet-class>com.ims.controller.BlogController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EventController</servlet-name>
+        <servlet-class>com.ims.controller.EventController</servlet-class>
+    </servlet>
+      <!--//in  servlet mapping we initialize all the urls we are using in certain controller and this url can only be accepted by this servlet.-->
+    <servlet-mapping>                                      
+        <servlet-name>AdminController</servlet-name>
+        <url-pattern>/Admin/Dashboard</url-pattern>
+    </servlet-mapping>
+   
+ 
+    <servlet-mapping>
+        <servlet-name>coursecontroller</servlet-name>
+        <url-pattern>/Admin/Course/Add</url-pattern>
+        <url-pattern>/Course/Detail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>coursecontroller</servlet-name>
+        <url-pattern>/Admin/Course/Display</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>coursecontroller</servlet-name>
+        <url-pattern>/Admin/Course/Edit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>coursecontroller</servlet-name>
+        <url-pattern>/Admin/Course/Update</url-pattern>
+    </servlet-mapping>
+   
+    <servlet-mapping>
+        <servlet-name>coursecontroller</servlet-name>
+        <url-pattern>/Admin/Course/Delete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>StudentController</servlet-name>
+        <url-pattern>/Admin/Student/Add</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>StudentController</servlet-name>
+        <url-pattern>/Admin/Student/Display</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>StudentController</servlet-name>
+        <url-pattern>/Admin/Student/Edit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>StudentController</servlet-name>
+        <url-pattern>/Admin/Student/Update</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>StudentController</servlet-name>
+        <url-pattern>/Admin/Student/Delete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RelationController</servlet-name>
+        <url-pattern>/Relation</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserController</servlet-name>
+        <url-pattern>/RegisterUser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserController</servlet-name>
+        <url-pattern>/RegisterUser/Add</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>HomeController</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+         <!--// We can also put many path at once if we know which path we are going to use.-->
+        <servlet-name>HomeController</servlet-name>
+        <url-pattern>/logout</url-pattern>
+        <url-pattern>/Home</url-pattern>
+        <url-pattern>/About</url-pattern>
+        <url-pattern>/Courses</url-pattern>
+        <url-pattern>/Contact</url-pattern>
+        <url-pattern>/Calenders</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MailController</servlet-name>
+        <url-pattern>/Mailer</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BlogController</servlet-name>
+        <url-pattern>/Admin/Blog/Add</url-pattern>
+        <url-pattern>/Admin/Blog/Display</url-pattern>
+        <url-pattern>/Admin/Blog/Edit</url-pattern>
+        <url-pattern>/Admin/Blog/Update</url-pattern>
+        <url-pattern>/Admin/Blog/Delete</url-pattern>
+        <url-pattern>/Blog</url-pattern>
+        <url-pattern>/Blog/Detail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EventController</servlet-name>
+        <url-pattern>/Admin/Event/Add</url-pattern>
+        <url-pattern>/Event/Display</url-pattern>
+        <url-pattern>/Admin/Event/Display</url-pattern>
+    </servlet-mapping>
+    
+     
+    <welcome-file-list>
+        <welcome-file>redirect.jsp</welcome-file>
+    </welcome-file-list>
+    
+    
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
